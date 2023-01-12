@@ -396,6 +396,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.1-service.sdm660
 
+# Tinyxml
+PRODUCT_PACKAGES += \
+    libtinyxml
+
 # Update Engine
 PRODUCT_PACKAGES += \
     otapreopt_script \
