@@ -64,17 +64,17 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 LOC_HIDL_VERSION := 3.0
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/vintf/manifest.xml
 ifdef BOARD_USES_KEYMASTER_4
-    DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/keymaster_4.xml
+    DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/configs/vintf/keymaster_4.xml
 else
-    DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/keymaster_3.xml
+    DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/configs/vintf/keymaster_3.xml
 endif
-DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
+DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/configs/vintf/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/configs/vintf/framework_manifest.xml
 TARGET_FS_CONFIG_GEN += \
-    $(PLATFORM_PATH)/config.fs \
-    $(PLATFORM_PATH)/mot_aids.fs
+    $(PLATFORM_PATH)/configs/config.fs \
+    $(PLATFORM_PATH)/configs/mot_aids.fs
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit_sdm660
@@ -96,7 +96,7 @@ BOARD_KERNEL_CMDLINE += androidboot.veritymode=eio
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8998
+TARGET_KERNEL_SOURCE := kernel/motorola/sdm660
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -128,11 +128,11 @@ TARGET_USERIMAGES_SPARSE_F2FS_DISABLED := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_ODM_PROP += $(PLATFORM_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(PLATFORM_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(PLATFORM_PATH)/system_ext.prop
-TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
-TARGET_VENDOR_PROP += $(PLATFORM_PATH)/vendor.prop
+TARGET_ODM_PROP += $(PLATFORM_PATH)/properties/odm.prop
+TARGET_PRODUCT_PROP += $(PLATFORM_PATH)/properties/product.prop
+TARGET_SYSTEM_EXT_PROP += $(PLATFORM_PATH)/properties/system_ext.prop
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/properties/system.prop
+TARGET_VENDOR_PROP += $(PLATFORM_PATH)/properties/vendor.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
@@ -141,7 +141,7 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 CUSTOM_APNS_FILE := $(PLATFORM_PATH)/configs/sprint_apns.xml
 ODM_MANIFEST_SKUS += qcril
-ODM_MANIFEST_QCRIL_FILES := $(PLATFORM_PATH)/odm_manifest_qcril.xml
+ODM_MANIFEST_QCRIL_FILES := $(PLATFORM_PATH)/configs/vintf/odm_manifest_qcril.xml
 
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS := \
