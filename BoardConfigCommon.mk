@@ -47,10 +47,8 @@ AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
 
-# Bootloader / Platform
-BOARD_USES_QCOM_HARDWARE := true
+# Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := SDM660
-TARGET_BOARD_PLATFORM := sdm660
 
 # Build
 BUILD_BROKEN_DUP_RULES := true
@@ -80,7 +78,6 @@ endif
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/configs/vintf/framework_manifest.xml
 TARGET_FS_CONFIG_GEN += \
-    $(PLATFORM_PATH)/configs/config.fs \
     $(PLATFORM_PATH)/configs/mot_aids.fs
 
 # Init
@@ -103,7 +100,7 @@ BOARD_KERNEL_CMDLINE += androidboot.veritymode=eio
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_SOURCE := kernel/motorola/sdm660
+TARGET_KERNEL_SOURCE := kernel/msm-4.4
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -120,17 +117,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/fsg:/fsg
 
-ifeq ($(WITH_GMS),true)
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 83886080 # 80 MB
-else
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 524288000 # 500 MB
-endif
-
-# Power
-TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
-TARGET_ODM_PROP += $(PLATFORM_PATH)/properties/odm.prop
 TARGET_PRODUCT_PROP += $(PLATFORM_PATH)/properties/product.prop
 TARGET_SYSTEM_EXT_PROP += $(PLATFORM_PATH)/properties/system_ext.prop
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/properties/system.prop
