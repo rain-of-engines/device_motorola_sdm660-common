@@ -196,7 +196,6 @@ ro.crypto.volume.contents_mode=ice
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # SOC
-ro.soc.manufacturer=Qualcomm
 ro.soc.model=SDM660
 
 # SurfaceFlinger
