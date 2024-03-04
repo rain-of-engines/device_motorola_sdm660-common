@@ -18,6 +18,9 @@
 /(vendor|system/vendor)/lib(64)?/motorola\.hardware\.audio\.adspd@1\.0\.so            u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/motorola\.hardware\.audio\.adspd@1\.0_vendor\.so     u:object_r:same_process_hal_file:s0
 
+# libadspd
+/vendor/lib(64)?/libadspd\.so                                      u:object_r:same_process_hal_file:s0
+
 # libmcf
 /vendor/lib(64)?/libmcf-qc-fd-offline\.so                        u:object_r:same_process_hal_file:s0
 
