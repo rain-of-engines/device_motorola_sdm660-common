@@ -287,6 +287,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions
 
+# MotoWaves
+PRODUCT_PACKAGES += \
+    MotoWaves
+
 # netmgrd
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
