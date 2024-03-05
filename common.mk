@@ -29,13 +29,15 @@ PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
-    NfcOverlay
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
+    FrameworksRes \
+    NfcOverlay \
+    SettingsProviderRes \
+    SettingsRes \
+    SystemUIRes \
+    TelephonyOverlay \
+    WifiOverlay
 
 # A/B updater
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -461,7 +463,6 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libwifi-hal-qcom \
     wificond \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
