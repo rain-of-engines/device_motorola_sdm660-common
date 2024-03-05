@@ -136,9 +136,6 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 # OMX
 debug.stagefright.omx_default_rank=0
 
-# Perf
-ro.vendor.extension_library=libqti-perfd-client.so
-
 # Radio
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
