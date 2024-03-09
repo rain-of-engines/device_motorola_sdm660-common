@@ -15,6 +15,10 @@ ro.charger.enable_suspend=true
 # Deep Sleep
 pm.sleep_mode=1
 
+# Dexopt
+pm.dexopt.first-boot=quicken
+pm.dexopt.bg-dexopt=everything
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.vendor.cne.feature=1
