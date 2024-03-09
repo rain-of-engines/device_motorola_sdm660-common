@@ -5,6 +5,8 @@
 # ART
 dalvik.vm.dex2oat-filter=quicken
 dalvik.vm.image-dex2oat-filter=quicken
+dalvik.vm.dex2oat-minidebuginfo=false
+dalvik.vm.minidebuginfo=false
 
 # Audio
 use.voice.path.for.pcm.voip=false
